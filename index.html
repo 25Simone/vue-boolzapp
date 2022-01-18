@@ -10,7 +10,18 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
 <body>
-    <div id="app"></div>
+    <div id="app">
+        <div class="contact-container">
+            <div class="contact" v-for='contact in contacts'>
+                <img 
+                class="avatar" 
+                :src=" './img/avatar' + contact.avatar + '.jpg' " 
+                :alt="'avatar' + contact.avatar"
+                >
+                <span>{{contact.name}}</span>
+            </div>
+        </div>
+    </div>
     <script src="./js/script.js"></script>
 </body>
 </html>
