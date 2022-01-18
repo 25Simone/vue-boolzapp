@@ -2,16 +2,21 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: sans-serif;
 }
 
 /* utility */
 .avatar{
-    width: 60px;
+    width: 50px;
     border-radius: 50%;
 }
 .nav{
     height: 70px;
-    border: 4px solid purple;
+    background: #eaeae9;
+    padding: 8px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .contact{
     padding: 10px 15px;
@@ -21,6 +26,28 @@
 .chat-name{
     margin: 0 15px;
     font-size: 18px;
+}
+.nav-commands{
+    display: flex;
+    align-items: center;
+    color: #bbb;
+    font-size: 20px;
+    cursor: pointer;
+}
+.nav-commands i{
+    margin: 10px;
+}
+.message-out{
+    align-items: flex-end;
+}
+.message-in{
+    align-items: flex-start;
+}
+.message-out .message{
+    background: #d5f9b9;
+}
+.message-in .message{
+    background: #fff;
 }
 /* end utility */
 
@@ -40,7 +67,7 @@
     background: #fff;
     border: 4px solid yellow;
     width: 1200px;
-    height: 800px;  /* reference */
+    height: 900px;  /* reference */
     position: absolute;
     top: 50%;
     left: 50%;
@@ -56,11 +83,41 @@
     display: flex;
     flex-direction: column;
 }
+#user-data{
+    display: flex;
+    align-items: center;
+}
+#user-data span{
+    font-size: 15px;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
 
 /* section add desktop notification */
 #add-desktop-notification{
-    border: 4px solid dodgerblue;
-    height: 70px;
+    padding: 8px 15px;
+    background: #8ddafb;
+    display: flex;
+    align-items: center;
+}
+#add-desktop-notification > div:first-child{
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #fff;
+    color: #8ddafb;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#add-desktop-notification span{
+    text-decoration: underline;
+    font-size: 15px;
+    color: #aaa;
+    cursor: pointer;
 }
 
 /* search chat section */
@@ -81,6 +138,7 @@
     height: calc(100% - 140px);
     background-image: url(../img/mine.jpg);
     background-size: contain;
+    padding: 50px 70px;
 }
 #input-message-area{
     height: 70px;
