@@ -52,7 +52,7 @@
                     </div>
                 </div>
                 <div class="contact-container">
-                    <div @click='showChat(i)' class="contact" v-for='(contact, i) in contacts'>
+                    <div @click='showChat(i)' class="contact" :class='{focused: currentContact === i}' v-for='(contact, i) in contacts'>
                         <img 
                         class="avatar" 
                         :src=" './img/avatar' + contact.avatar + '.jpg' " 

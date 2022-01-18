@@ -64,6 +64,9 @@ i{
 .message-in .message{
     background: #fff;
 }
+.contact.focused{
+    background: #eee;
+}
 /* end utility */
 
 /* background */
@@ -165,7 +168,6 @@ i{
     flex-direction: column;
 }
 #current-chat{
-    border: 4px solid violet;
     height: calc(100% - 140px);
     background-image: url(../img/mine.jpg);
     background-size: contain;
