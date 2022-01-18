@@ -3,7 +3,29 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+/* utility */
 .avatar{
     width: 50px;
     border-radius: 50%;
+}
+/* end utility */
+
+#page{
+    height: 100vh;
+    background: #dcdbd1;
+    position: relative;
+}
+#page>div:first-child{
+    height: 16vh;
+    background: #019688;
+}
+
+#app{
+    max-width: 1300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
 }
