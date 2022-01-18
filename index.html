@@ -39,7 +39,18 @@
                     </div>
                 </section>
                 <!-- sezione ricerca chat -->
-                <div id="search-chat"></div>
+                <div id="search-chat">
+                    <div>
+                        <div class="search-button">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <input 
+                        :v-model='searchChat'
+                        placeholder="Cerca o inizia in una nuova chat"
+                        type="text"
+                        >
+                    </div>
+                </div>
                 <div class="contact-container">
                     <div class="contact" v-for='contact in contacts'>
                         <img 

@@ -86,7 +86,8 @@ new Vue({
                     }
                 ],
             },
-        ]
+        ],
+        searchChat: '',
         
     },
 
