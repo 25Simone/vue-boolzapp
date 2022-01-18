@@ -52,7 +52,7 @@
                     </div>
                 </div>
                 <div class="contact-container">
-                    <div class="contact" v-for='contact in contacts'>
+                    <div @click='showChat(i)' class="contact" v-for='(contact, i) in contacts'>
                         <img 
                         class="avatar" 
                         :src=" './img/avatar' + contact.avatar + '.jpg' " 
@@ -66,20 +66,37 @@
             <div id="main">
                 <!-- main-nav -->
                 <div class="nav">
-                    <div>to do</div>
+                    <div class="current-contact">
+                        <img 
+                        class="avatar" 
+                        :src=" './img/avatar' + contacts[currentContact].avatar + '.jpg' " 
+                        :alt="'avatar' + contacts[currentContact].avatar"
+                        >
+                        <div class='current-contact-data' >
+                            <span>{{contacts[currentContact].name}}</span>
+                            <span>Ultimo accesso oggi alle</span>
+                        </div>
+                    </div>
                     <div class="nav-commands">
                         <i class="fas fa-search"></i>
                         <i class="fas fa-paperclip"></i>
                         <i class="fas fa-ellipsis-v"></i>
                     </div>
                 </div>
-                <!-- main-content -->
-                <div id="main-content">
-                    <div class="message-container">
-                        <div class="message"></div>
+                <!-- chat corrente -->
+                <div id="current-chat">
+                    <div v-for='(message, i) in contacts[currentContact].messages' :class="['row-message', message.status === 'sent' ? 'message-out' : 'message-in']">
+                        <div class="message">
+                            <p>{{message.text}}</p>
+                            <span>{{message.date}}</span>
+                        </div>
                     </div>
                 </div>
-                <div id="input-message-area"></div>
+                <div id="input-message-area">
+                    <i class="far fa-smile"></i>
+                    <input placeholder="Scrivi un messaggio" v-model='newMessage' type="text">
+                    <i class="fas fa-microphone"></i>
+                </div>
             </div>
         </div>
 

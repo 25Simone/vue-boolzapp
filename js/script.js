@@ -88,9 +88,13 @@ new Vue({
             },
         ],
         searchChat: '',
-        
+        newMessage: '',
+        currentContact: 0,
     },
 
     methods: {
+        showChat: function(index){
+            this.currentContact = index;
+        }
     },
 });

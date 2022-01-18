@@ -4,6 +4,12 @@
     box-sizing: border-box;
     font-family: sans-serif;
 }
+input:focus-visible{
+    outline: none;
+}
+i{
+    cursor: pointer;
+}
 
 /* utility */
 .avatar{
@@ -32,10 +38,19 @@
     align-items: center;
     color: #bbb;
     font-size: 20px;
-    cursor: pointer;
 }
 .nav-commands i{
     margin: 10px;
+}
+.row-message{
+    display: flex;
+    flex-direction: column;
+}
+.message{
+    margin: 8px 0;
+    padding: 8px 20px;
+    width: 300px;
+    border-radius: 10px;
 }
 .message-out{
     align-items: flex-end;
@@ -65,8 +80,7 @@
 /* app */
 #app{
     background: #fff;
-    border: 4px solid yellow;
-    width: 1200px;
+    width: 1300px;
     height: 900px;  /* reference */
     position: absolute;
     top: 50%;
@@ -78,8 +92,7 @@
 
 /* sidebar */
 #sidebar{
-    width: 40%;
-    border: 4px solid green;
+    width: 35%;
     display: flex;
     flex-direction: column;
 }
@@ -135,9 +148,6 @@
     height: 30px;
     border: none;
 }
-#search-chat input:focus-visible{
-    outline: none;
-}
 .search-button{
     width: 15%;
     height: 30px;
@@ -150,19 +160,55 @@
 
 /* main */
 #main{
-    width: 60%;
-    border: 4px solid red;
+    width: 65%;
     display: flex;
     flex-direction: column;
 }
-#main-content{
+#current-chat{
     border: 4px solid violet;
     height: calc(100% - 140px);
     background-image: url(../img/mine.jpg);
     background-size: contain;
-    padding: 50px 70px;
+    padding: 50px 60px;
 }
+.current-contact{
+    display: flex;
+    align-items: center;
+}
+.current-contact-data{
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+    font-size: 15px;
+    font-weight: bold;
+}
+.current-contact-data span:last-child{
+    color: #aaa;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* input message */
 #input-message-area{
     height: 70px;
-    border: 4px solid blue;
+    font-size: 25px;
+    color: #6a7376;
+    background: #f3eee9;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#input-message-area input{
+    width: 75%;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+}
+.message span{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 12px;
+    color: #ccc;
+    margin-top: 8px;
 }
