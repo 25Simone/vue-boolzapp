@@ -97,7 +97,7 @@ new Vue({
             this.currentContact = index;
         },
         newMessage: function(){
-            const currentMessages = this.contacts[this.currentContact].messages;
+            const currentMessages = this.filteredContactList[this.currentContact].messages;
             currentMessages.push({
                 date: '19/01/2022 10:31:30',
                 text: this.newMessageText,

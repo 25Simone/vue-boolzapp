@@ -71,11 +71,11 @@
                     <div class="current-contact">
                         <img 
                         class="avatar" 
-                        :src=" './img/avatar' + contacts[currentContact].avatar + '.jpg' " 
-                        :alt="'avatar' + contacts[currentContact].avatar"
+                        :src=" './img/avatar' + filteredContactList[currentContact].avatar + '.jpg' " 
+                        :alt="'avatar' + filteredContactList[currentContact].avatar"
                         >
                         <div class='current-contact-data' >
-                            <span>{{contacts[currentContact].name}}</span>
+                            <span>{{filteredContactList[currentContact].name}}</span>
                             <span>Ultimo accesso oggi alle</span>
                         </div>
                     </div>
@@ -88,7 +88,7 @@
                 <!-- chat corrente -->
                 <div id="current-chat">
                     <div
-                    v-for='(message, i) in contacts[currentContact].messages'
+                    v-for='(message, i) in filteredContactList[currentContact].messages'
                     :class="['row-message', message.status === 'sent' ? 'message-out' : 'message-in']"
                     >
                         <div class="message">
