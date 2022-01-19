@@ -114,6 +114,7 @@ new Vue({
                 date: '19/01/2022 10:31:30',
                 text: this.newMessageText,
                 status: 'sent',
+                modalShow: false,
             });
             this.newMessageText = '';
             setTimeout(() => {
@@ -128,7 +129,7 @@ new Vue({
                 modalShow: false,
             });
         },
-        messageOptionShow: function(index){
+        messageOptionsShow: function(index){
             const currentMessages = this.filteredContactList[this.currentContact].messages;
             currentMessages[index].modalShow = !currentMessages[index].modalShow;
         },
