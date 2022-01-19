@@ -21,9 +21,9 @@
                         <span>Nome Utente</span>
                     </div>
                     <div class="nav-commands">
-                        <i class="fas fa-circle-notch"></i>
-                        <i class="fas fa-comment-alt"></i>
-                        <i class="fas fa-ellipsis-v"></i>
+                        <i class="icon fas fa-circle-notch"></i>
+                        <i class="icon fas fa-comment-alt"></i>
+                        <i class="icon fas fa-ellipsis-v"></i>
                     </div>
                 </div>
                 <!-- sezione per attivare notifiche desktop -->
@@ -40,7 +40,7 @@
                 <div id="search-chat">
                     <div>
                         <div class="search-button">
-                            <i class="fas fa-search"></i>
+                            <i class="icon fas fa-search"></i>
                         </div>
                         <input 
                         placeholder="Cerca o inizia in una nuova chat"
@@ -49,6 +49,7 @@
                         >
                     </div>
                 </div>
+                <!-- contatti -->
                 <div class="contact-container">
                     <div
                     v-for='(contact, i) in filteredContactList'
@@ -80,9 +81,9 @@
                         </div>
                     </div>
                     <div class="nav-commands">
-                        <i class="fas fa-search"></i>
-                        <i class="fas fa-paperclip"></i>
-                        <i class="fas fa-ellipsis-v"></i>
+                        <i class="icon fas fa-search"></i>
+                        <i class="icon fas fa-paperclip"></i>
+                        <i class="icon fas fa-ellipsis-v"></i>
                     </div>
                 </div>
                 <!-- chat corrente -->
@@ -91,10 +92,12 @@
                     v-for='(message, i) in filteredContactList[currentContact].messages'
                     :class="['row-message', message.status === 'sent' ? 'message-out' : 'message-in']"
                     >
+                    <!-- messaggio -->
                         <div class="message" @click='messageOptionsShow(i)'>
                             <p>{{message.text}}</p>
-                            <i v-if='message.modalShow' class="fas fa-chevron-down"></i>
-                            <i v-else class="fas fa-chevron-up"></i>
+                            <!-- chevron opzioni -->
+                            <i v-if='message.modalShow' class="icon fas fa-chevron-down"></i>
+                            <i v-else class="icon fas fa-chevron-up"></i>
                             <span>{{message.date}}</span>
                             <!-- modale opzioni messaggio -->
                             <div v-if='message.modalShow' class="message-options">

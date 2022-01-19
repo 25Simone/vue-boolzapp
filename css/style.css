@@ -6,6 +6,11 @@
 }
 
 /* utility */
+.icon{
+    cursor: pointer;
+    margin: 10px;
+    color: #aaa;
+}
 .avatar{
     width: 50px;
     border-radius: 50%;
@@ -22,6 +27,7 @@
     padding: 10px 15px;
     display: flex;
     align-items: flex-start;
+    cursor: pointer;
 }
 .chat-name{
     margin: 0 15px;
@@ -30,7 +36,6 @@
 .nav-commands{
     display: flex;
     align-items: center;
-    color: #bbb;
     font-size: 20px;
 }
 .row-message{
@@ -77,12 +82,7 @@
 input:focus-visible{
     outline: none;
 }
-i{
-    cursor: pointer;
-}
-.nav-commands i{
-    margin: 10px;
-}
+
 
 /* background */
 #page{
@@ -171,7 +171,6 @@ i{
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #aaa;
 }
 
 /* main */
@@ -229,9 +228,8 @@ i{
     color: #ccc;
     margin-top: 8px;
 }
-.message > i{
+.message > .icon{
     font-size: 12px;
-    color: #aaa;
 }
 .message-options > div:last-child{
     margin-top: 20px;
