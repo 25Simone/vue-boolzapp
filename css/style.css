@@ -6,6 +6,9 @@
 }
 
 /* utility */
+.hide{
+    display: none;
+}
 .icon{
     cursor: pointer;
     margin: 10px;
@@ -46,7 +49,7 @@
     position: relative;
     margin: 8px 0;
     padding: 8px 15px;
-    width: 350px;
+    width: 380px;
     border-radius: 10px;
     display: flex;
     flex-wrap: wrap;

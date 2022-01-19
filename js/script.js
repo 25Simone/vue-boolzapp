@@ -139,7 +139,6 @@ new Vue({
     computed: {
         filteredContactList(){
             return this.contacts.filter((contact) => {
-                this.currentContact = 0;
                 return contact.name.toLowerCase().includes(this.searchChat.toLowerCase());
             });
         },
