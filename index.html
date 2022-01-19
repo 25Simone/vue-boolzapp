@@ -91,10 +91,18 @@
                     v-for='(message, i) in filteredContactList[currentContact].messages'
                     :class="['row-message', message.status === 'sent' ? 'message-out' : 'message-in']"
                     >
-                        <div class="message">
+                        <div class="message" @click='messageOptionShow(i)'>
                             <p>{{message.text}}</p>
+                            <i v-if='message.modalShow' class="fas fa-chevron-down"></i>
+                            <i v-else class="fas fa-chevron-up"></i>
                             <span>{{message.date}}</span>
+                            <!-- modale opzioni messaggio -->
+                            <div v-if='message.modalShow' class="message-option">
+                                <div>Message info</div>
+                                <div @click='deleteMessage(i)'>Delete message</div>
+                            </div>
                         </div>
+
                     </div>
                 </div>
                 <!-- area di input dei messaggi -->

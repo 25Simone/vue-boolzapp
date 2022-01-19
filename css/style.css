@@ -38,10 +38,14 @@
     flex-direction: column;
 }
 .message{
+    position: relative;
     margin: 8px 0;
-    padding: 8px 20px;
-    width: 300px;
+    padding: 8px 15px;
+    width: 350px;
     border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 .message-out{
     align-items: flex-end;
@@ -57,6 +61,15 @@
 }
 .contact.focused{
     background: #eee;
+}
+.message-option{
+    position: absolute;
+    top: 25px;
+    right: 10px;
+    background: #fff;
+    padding: 20px;
+    z-index: 1;
+    box-shadow: 2px 2px 1px #ccc;
 }
 /* end utility */
 
@@ -209,9 +222,17 @@ i{
     padding: 10px;
 }
 .message span{
+    width: 100%;
     display: flex;
     justify-content: flex-end;
     font-size: 12px;
     color: #ccc;
     margin-top: 8px;
+}
+.message > i{
+    font-size: 12px;
+    color: #aaa;
+}
+.message-option > div:first-child{
+    margin-bottom: 20px;
 }
