@@ -105,6 +105,9 @@ i{
     margin: 0 10px;
     font-weight: bold;
 }
+.contact-container{
+    overflow-y: auto;
+}
 
 
 /* section add desktop notification */
@@ -169,6 +172,7 @@ i{
     background-image: url(../img/mine.jpg);
     background-size: contain;
     padding: 50px 60px;
+    overflow-y: auto;
 }
 .current-contact{
     display: flex;
