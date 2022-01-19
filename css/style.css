@@ -74,7 +74,6 @@ i{
 /* background */
 #page{
     height: 100vh;
-    background: #dcdbd1;
     position: relative;
     background: linear-gradient(180deg, rgba(1,150,136,1) 20%, rgba(220,219,209,1) 20%);
 }

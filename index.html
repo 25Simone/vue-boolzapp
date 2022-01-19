@@ -100,7 +100,12 @@
                 <!-- area di input dei messaggi -->
                 <div id="input-message-area">
                     <i class="far fa-smile"></i>
-                    <input placeholder="Scrivi un messaggio" v-model='newMessage' type="text">
+                    <input
+                    type="text"
+                    placeholder="Scrivi un messaggio"
+                    v-model='newMessageText'
+                    @keyup.enter='newMessage'
+                    >
                     <i class="fas fa-microphone"></i>
                 </div>
             </div>

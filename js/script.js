@@ -87,14 +87,33 @@ new Vue({
                 ],
             },
         ],
-        searchChat: '',
-        newMessage: '',
         currentContact: 0,
+        newMessageText: '',
+        searchChat: '',
     },
 
     methods: {
         showChat: function(index){
             this.currentContact = index;
+        },
+        newMessage: function(){
+            const currentMessages = this.contacts[this.currentContact].messages;
+            currentMessages.push({
+                date: '19/01/2022 10:31:30',
+                text: this.newMessageText,
+                status: 'sent',
+            });
+            this.newMessageText = '';
+            setTimeout(() => {
+                this.answerFunction(currentMessages);
+            }, 1000);
+        },
+        answerFunction(array){
+            array.push({
+                date: '19/01/2022 10:31:31',
+                text: 'ok',
+                status: 'received',
+            });
         }
     },
 });
