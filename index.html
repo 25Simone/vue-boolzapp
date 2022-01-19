@@ -54,16 +54,17 @@
                     <div
                     v-for='(contact, i) in contacts'
                     @click='showChat(i)'
-                    class="contact"
-                    :class='{focused: currentContact === i}'
-                    :class='{hide: !filteredContactList.includes(contact)}'
+                    :class='[{focused: currentContact === i}, {hide: !filteredContactList.includes(contact)}]'
                     >
+                    <span class="contact">
                         <img 
                         class="avatar" 
                         :src=" './img/avatar' + contact.avatar + '.jpg' " 
                         :alt="'avatar' + contact.avatar"
                         >
                         <span class="chat-name">{{contact.name}}</span>
+                    </span>
+                        
                     </div>
                 </div>
             </div>

@@ -67,7 +67,7 @@
 .message-in .message{
     background: #fff;
 }
-.contact.focused{
+.focused{
     background: #eee;
 }
 .message-options{

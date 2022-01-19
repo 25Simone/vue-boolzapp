@@ -143,7 +143,7 @@ new Vue({
             });
         },
         currentMessages(){
-            return this.filteredContactList[this.currentContact].messages;
+            return this.contacts[this.currentContact].messages;
         },
     },
 });
