@@ -43,15 +43,15 @@
                             <i class="fas fa-search"></i>
                         </div>
                         <input 
-                        :v-model='searchChat'
                         placeholder="Cerca o inizia in una nuova chat"
                         type="text"
+                        v-model= 'searchChat'
                         >
                     </div>
                 </div>
                 <div class="contact-container">
                     <div
-                    v-for='(contact, i) in contacts'
+                    v-for='(contact, i) in filteredContactList'
                     @click='showChat(i)'
                     class="contact" :class='{focused: currentContact === i}'
                     >
