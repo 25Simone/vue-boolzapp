@@ -93,7 +93,7 @@
                     :class="['row-message', message.status === 'sent' ? 'message-out' : 'message-in']"
                     >
                     <!-- messaggio -->
-                        <div class="message" @click='messageOptionsShow(i)'>
+                        <div class="message" @click='messageOptionsShow(i, currentMessages)'>
                             <p>{{message.text}}</p>
                             <!-- chevron opzioni -->
                             <i v-if='message.modalShow' class="icon fas fa-chevron-down"></i>
@@ -102,7 +102,7 @@
                             <!-- modale opzioni messaggio -->
                             <div v-if='message.modalShow' class="message-options">
                                 <div>Message info</div>
-                                <div @click='deleteMessage(i)'>Delete message</div>
+                                <div @click='deleteMessage(i, currentMessages)'>Delete message</div>
                             </div>
                         </div>
 
@@ -115,7 +115,7 @@
                     type="text"
                     placeholder="Scrivi un messaggio"
                     v-model='newMessageText'
-                    @keyup.enter='newMessage'
+                    @keyup.enter='newMessage(currentMessages)'
                     >
                     <i class="fas fa-microphone"></i>
                 </div>

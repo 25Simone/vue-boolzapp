@@ -101,15 +101,13 @@ new Vue({
         currentContact: 0,
         newMessageText: '',
         searchChat: '',
-        // inserire nel data il currentMessages per pulire codice
     },
 
     methods: {
         showChat: function(index){
             this.currentContact = index;
         },
-        newMessage: function(){
-            const currentMessages = this.filteredContactList[this.currentContact].messages;
+        newMessage: function(currentMessages){
             currentMessages.push({
                 date: '19/01/2022 10:31:30',
                 text: this.newMessageText,
@@ -129,12 +127,10 @@ new Vue({
                 modalShow: false,
             });
         },
-        messageOptionsShow: function(index){
-            const currentMessages = this.filteredContactList[this.currentContact].messages;
+        messageOptionsShow: function(index, currentMessages){
             currentMessages[index].modalShow = !currentMessages[index].modalShow;
         },
-        deleteMessage: function(index){
-            const currentMessages = this.filteredContactList[this.currentContact].messages;
+        deleteMessage: function(index, currentMessages){
             currentMessages.splice(index, 1);
         },
     },
@@ -143,8 +139,12 @@ new Vue({
     computed: {
         filteredContactList(){
             return this.contacts.filter((contact) => {
+                this.currentContact = 0;
                 return contact.name.toLowerCase().includes(this.searchChat.toLowerCase());
             });
+        },
+        currentMessages(){
+            return this.filteredContactList[this.currentContact].messages;
         },
     },
 });
