@@ -4,12 +4,6 @@
     box-sizing: border-box;
     font-family: sans-serif;
 }
-input:focus-visible{
-    outline: none;
-}
-i{
-    cursor: pointer;
-}
 
 /* utility */
 .avatar{
@@ -39,9 +33,6 @@ i{
     color: #bbb;
     font-size: 20px;
 }
-.nav-commands i{
-    margin: 10px;
-}
 .row-message{
     display: flex;
     flex-direction: column;
@@ -69,27 +60,34 @@ i{
 }
 /* end utility */
 
+/* general */
+input:focus-visible{
+    outline: none;
+}
+i{
+    cursor: pointer;
+}
+.nav-commands i{
+    margin: 10px;
+}
+
 /* background */
 #page{
     height: 100vh;
     background: #dcdbd1;
     position: relative;
-}
-#page>div:first-child{
-    height: 16vh;
-    background: #019688;
+    background: linear-gradient(180deg, rgba(1,150,136,1) 20%, rgba(220,219,209,1) 20%);
 }
 
 /* app */
 #app{
     background: #fff;
-    width: 1300px;
-    height: 900px;  /* reference */
+    width: 75%;
+    height: 80%;  /* reference */
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1;
     display: flex;
 }
 

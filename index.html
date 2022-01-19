@@ -11,8 +11,6 @@
 </head>
 <body>
     <div id="page">
-        <div></div>
-
         <div id="app">
             <!-- sidebar -->
             <div id="sidebar">
@@ -52,7 +50,11 @@
                     </div>
                 </div>
                 <div class="contact-container">
-                    <div @click='showChat(i)' class="contact" :class='{focused: currentContact === i}' v-for='(contact, i) in contacts'>
+                    <div
+                    v-for='(contact, i) in contacts'
+                    @click='showChat(i)'
+                    class="contact" :class='{focused: currentContact === i}'
+                    >
                         <img 
                         class="avatar" 
                         :src=" './img/avatar' + contact.avatar + '.jpg' " 
@@ -85,13 +87,17 @@
                 </div>
                 <!-- chat corrente -->
                 <div id="current-chat">
-                    <div v-for='(message, i) in contacts[currentContact].messages' :class="['row-message', message.status === 'sent' ? 'message-out' : 'message-in']">
+                    <div
+                    v-for='(message, i) in contacts[currentContact].messages'
+                    :class="['row-message', message.status === 'sent' ? 'message-out' : 'message-in']"
+                    >
                         <div class="message">
                             <p>{{message.text}}</p>
                             <span>{{message.date}}</span>
                         </div>
                     </div>
                 </div>
+                <!-- area di input dei messaggi -->
                 <div id="input-message-area">
                     <i class="far fa-smile"></i>
                     <input placeholder="Scrivi un messaggio" v-model='newMessage' type="text">
