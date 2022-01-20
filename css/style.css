@@ -125,7 +125,21 @@ input:focus-visible{
 .contact-container{
     overflow-y: auto;
 }
-
+.chat-data{
+    display: flex;
+    flex-direction: column;
+}
+.last-message{
+    font-size: 10px;
+    color: #000;
+    margin: 5px 15px;
+}
+.last-access{
+    font-size: 8px;
+    color: #aaa;
+    justify-self: flex-end;
+    margin: 0px 15px;
+}
 
 /* section add desktop notification */
 #add-desktop-notification{

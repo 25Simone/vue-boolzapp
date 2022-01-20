@@ -116,7 +116,7 @@ new Vue({
         },
         newMessage: function(currentMessages){
             currentMessages.push({
-                date: '19/01/2022 10:31:30',
+                date: this.getCurrentDate(),
                 text: this.newMessageText,
                 status: 'sent',
                 modalShow: false,
@@ -128,7 +128,7 @@ new Vue({
         },
         answerFunction(array){
             array.push({
-                date: '19/01/2022 10:31:31',
+                date: this.getCurrentDate(),
                 text: 'ok',
                 status: 'received',
                 modalShow: false,
@@ -140,15 +140,25 @@ new Vue({
         deleteMessage: function(index, currentMessages){
             currentMessages.splice(index, 1);
         },
+        lastMessage(contact){
+            return contact.messages[contact.messages.length - 1].text;
+        },
+        lastAcces(contact){
+            return contact.messages[contact.messages.length - 1].date;
+        },
+        getCurrentDate(){
+            return dayjs().format("DD/MM/YYYY HH:mm:ss");
+        },
     },
     // computed mi permette di richiamare le sue proprietà nell html come fossero dei data,
     //la loro funzionalità è data dal fatto che si tratta di funzioni che restituiscono qualcosa che vue si preoccupa di tenere sempre aggiornato dei cambiamenti
     computed: {
-        filteredContactList(){
-            return this.contacts.filter((contact) => {
-                return contact.name.toLowerCase().includes(this.searchChat.toLowerCase());
-            });
-        },
+        // soluzione alternativa perché i computed piacciono solo a me
+        // filteredContactList(){
+        //     return this.contacts.filter((contact) => {
+        //         return contact.name.toLowerCase().includes(this.searchChat.toLowerCase());
+        //     });
+        // },
         currentMessages(){
             return this.contacts[this.currentContact].messages;
         },

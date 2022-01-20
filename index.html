@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
 <body>
@@ -55,7 +56,10 @@
                     <div
                     v-for='(contact, i) in contacts'
                     @click='showChat(i)'
-                    :class='[{focused: currentContact === i}, {hide: !filteredContactList.includes(contact)}]'
+                    :class='[
+                    {focused: currentContact === i},
+                    {hide: !contact.name.toLowerCase().includes(searchChat.toLowerCase())}
+                    ]'
                     >
                     <span class="contact">
                         <img 
@@ -63,7 +67,11 @@
                         :src="getAvatar(contact)" 
                         :alt="'avatar' + contact.avatar"
                         >
-                        <span class="chat-name">{{contact.name}}</span>
+                        <div class='chat-data'>
+                            <span class="chat-name">{{contact.name}}</span>
+                            <span class="last-message">{{lastMessage(contact)}}</span>
+                            <span class="last-access">{{lastAcces(contact)}}</span>
+                        </div>
                     </span>
                         
                     </div>
