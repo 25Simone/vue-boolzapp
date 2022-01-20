@@ -105,7 +105,7 @@
                             <!-- modale opzioni messaggio -->
                             <div v-if='message.modalShow' class="message-options">
                                 <div>Message info</div>
-                                <div @click='deleteMessage(i, currentMessages)'>Delete message</div>
+                                <div @click.stop='deleteMessage(i, currentMessages)'>Delete message</div>
                             </div>
                         </div>
 
