@@ -105,6 +105,7 @@ new Vue({
         currentContact: 0,
         newMessageText: '',
         searchChat: '',
+        desktopNotifications: false,
     },
 
     methods: {
@@ -149,7 +150,11 @@ new Vue({
         getCurrentDate(){
             return dayjs().format("DD/MM/YYYY HH:mm:ss");
         },
+        desktopNotificationsOnOff(){
+            this.desktopNotifications = !this.desktopNotifications;
+        }
     },
+
     // computed mi permette di richiamare le sue proprietà nell html come fossero dei data,
     //la loro funzionalità è data dal fatto che si tratta di funzioni che restituiscono qualcosa che vue si preoccupa di tenere sempre aggiornato dei cambiamenti
     computed: {
