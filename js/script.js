@@ -98,12 +98,19 @@ new Vue({
                 ],
             },
         ],
+        userData: {
+            name: 'Nome  Utente',
+            avatar: '_io',
+        },
         currentContact: 0,
         newMessageText: '',
         searchChat: '',
     },
 
     methods: {
+        getAvatar(contact) {
+            return `./img/avatar${contact.avatar}.jpg`;
+        },
         showChat: function(index){
             this.currentContact = index;
         },

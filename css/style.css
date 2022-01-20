@@ -51,6 +51,7 @@
     padding: 8px 15px;
     width: 380px;
     border-radius: 10px;
+    box-shadow: 2px 2px 4px #ccc;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;

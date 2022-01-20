@@ -16,9 +16,10 @@
             <div id="sidebar">
                 <!-- sidebar-nav -->
                 <div class="nav">
+                    <!-- userr data -->
                     <div id="user-data">
-                        <img class="avatar" src="./img/avatar_io.jpg" alt="avatar utente">
-                        <span>Nome Utente</span>
+                        <img class="avatar" :src="getAvatar(userData)" alt="avatar utente">
+                        <span>{{userData.name}}</span>
                     </div>
                     <div class="nav-commands">
                         <i class="icon fas fa-circle-notch"></i>
@@ -59,7 +60,7 @@
                     <span class="contact">
                         <img 
                         class="avatar" 
-                        :src=" './img/avatar' + contact.avatar + '.jpg' " 
+                        :src="getAvatar(contact)" 
                         :alt="'avatar' + contact.avatar"
                         >
                         <span class="chat-name">{{contact.name}}</span>
@@ -75,7 +76,7 @@
                     <div class="current-contact">
                         <img 
                         class="avatar" 
-                        :src=" './img/avatar' + contacts[currentContact].avatar + '.jpg' " 
+                        :src="getAvatar(contacts[currentContact])" 
                         :alt="'avatar' + contacts[currentContact].avatar"
                         >
                         <div class='current-contact-data' >
@@ -96,16 +97,16 @@
                     :class="['row-message', message.status === 'sent' ? 'message-out' : 'message-in']"
                     >
                     <!-- messaggio -->
-                        <div class="message" @click='messageOptionsShow(i, currentMessages)'>
+                        <div class="message">
                             <p>{{message.text}}</p>
                             <!-- chevron opzioni -->
-                            <i v-if='message.modalShow' class="icon fas fa-chevron-down"></i>
-                            <i v-else class="icon fas fa-chevron-up"></i>
+                            <i v-if='message.modalShow' @click='messageOptionsShow(i, currentMessages)' class="icon fas fa-chevron-down"></i>
+                            <i v-else @click='messageOptionsShow(i, currentMessages)' class="icon fas fa-chevron-up"></i>
                             <span>{{message.date}}</span>
                             <!-- modale opzioni messaggio -->
                             <div v-if='message.modalShow' class="message-options">
                                 <div>Message info</div>
-                                <div @click.stop='deleteMessage(i, currentMessages)'>Delete message</div>
+                                <div @click='deleteMessage(i, currentMessages)'>Delete message</div>
                             </div>
                         </div>
 
